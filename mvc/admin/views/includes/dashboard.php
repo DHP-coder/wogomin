@@ -1,10 +1,10 @@
-<div class="row">
+<!-- <div class="row">
     <div class="col-md-12">
         <div class="overview-wrap">
             <h2 class="title-1 m-b-35"><b>OVERVIEW</b></h2>
         </div>
     </div>
-</div>
+</div> -->
 <div class="row m-t-25">
     <div class="col-sm-6 col-lg-3">
         <div class="overview-item overview-item--c1">

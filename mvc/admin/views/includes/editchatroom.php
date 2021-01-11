@@ -1,52 +1,44 @@
-<!-- <?php
-        $mang = json_decode($data["edit_rc"]);
-        foreach ($mang as $m) {
-            echo $m->id;
-            echo $m->roomName;
-            echo $m->dateCreated;
-        }
-        ?> -->
 <div class="row justify-content-center">
     <div class="col-lg-6">
         <div class="card">
-            <div class="card-header">Example Form</div>
+            <div class="card-header"><h3>Edit room chat<h3></div>
             <div class="card-body card-block">
-                <form action="" method="post" class="">
+            <?php
+        $mang = json_decode($data["edit_rc"]);
+        foreach ($mang as $m) {
+            ?>
+                <form action="/wogomin/admin/updateChatRoom/<?php echo $m->id; ?>" method="post">
+               
                     <div class="form-group">
                         <div class="input-group">
-                            <div class="input-group-addon">Id</div>
-                            <input type="text" id="username3" name="username3" disabled class="form-control">
-                            <div class="input-group-addon">
-                                <i class="fa fa-user"></i>
-                            </div>
+                            <div class="input-group-addon" style="padding: .5rem 2.95rem;">ID</div>
+                            <input type="text" id="username3" name="idchatroom" disabled class="form-control" value="<?php echo $m->id; ?>">
+                            
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
-                            <div class="input-group-addon">Email</div>
-                            <input type="email" id="email3" name="email3" class="form-control">
-                            <div class="input-group-addon">
-                                <i class="fa fa-envelope"></i>
-                            </div>
+                            <div class="input-group-addon">Room name</div>
+                            <input type="text" id="email3" name="roomname" class="form-control" value="<?php echo $m->roomName; ?>">
+                           
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
-                            <div class="input-group-addon">Password</div>
-                            <input type="password" id="password3" name="password3" class="form-control">
-                            <div class="input-group-addon">
-                                <i class="fa fa-asterisk"></i>
-                            </div>
+                            <div class="input-group-addon" style="padding: .5rem 0.9rem;">Date create</div>
+                            <input type="date" id="password3" name="datecreate" class="form-control" value="<?php echo $m->dateCreated; ?>">
+                            
                         </div>
                     </div>
                     <div class="card-footer">
-                                        <button type="submit" class="btn btn-primary btn-sm">
-                                            <i class="fa fa-dot-circle-o"></i> Update
+                                        <button type="submit" name="btn-updatechatroom" class="btn btn-primary btn-sm">
+                                       <i class="fa fa-dot-circle-o"></i> Update
                                         </button>
                                         <button type="reset" class="btn btn-danger btn-sm">
                                             <i class="fa fa-ban"></i> Cancel
                                         </button>
                                     </div>
+<?php } ?>
                 </form>
             </div>
         </div>

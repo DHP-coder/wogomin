@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title Page-->
-    <title><?php $data["page"] ?></title>
+    <title>wogomin</title>
 
     <!-- Fontfaces CSS-->
 
@@ -62,28 +62,28 @@
                     <ul class="navbar-mobile__list list-unstyled">
 
                         <li>
-                            <a href="./dashboard">
+                            <a href="/wogomin/admin/dashboard">
                                 <i class="fa fa-tachometer"></i><b>Dashboard</b></a>
                                 
                         </li>
                         
                         <li>
-                            <a href="./chatroom">
+                            <a href="/wogomin/admin/chatroom">
                                 <i class="fa fa-comments"></i><b>Chat rooms</b></a>
 
                         </li>
 
                         <li>
-                            <a href="./users">
+                            <a href="/wogomin/admin/users">
                                 <i class="fa fa-users"></i><b>Users</b></a>
                         </li>
                         <li>
-                            <a href="./contentchat">
+                            <a href="/wogomin/admin/contentchat">
                                 <i class="fa fa-comment"></i><b>Content chat</b></a>
 
                         </li>
                         <li>
-                            <a href="./logout">
+                            <a href="/wogomin/admin/logout">
                                 <i class="fa fa-sign-out"></i><b>Log out</b></a>
 
                         </li>
@@ -98,35 +98,39 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="./dashboard">
-                    <img src="/wogomin/public/images/admin/icon/logo.jpg" alt="Wogomin" />
+                    <img src="/wogomin/public/images/admin/WoGoMin.png" alt="Wogomin" />
                 </a>
             </div>
+            
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
-
                         <li>
-                            <a href="./dashboard">
+                            Hello <b><?php echo $_SESSION['user']; ?></b>
+                                        
+                        </li>
+                        <li>
+                            <a href="/wogomin/admin/dashboard" >
                                 <i class="fa fa-tachometer"></i><b>Dashboard</b></a>
                                 
                         </li>
                         <li>
-                            <a href="./chatroom">
+                            <a href="/wogomin/admin/chatroom" >
                                 <i class="fa fa-comments"></i><b>Chat rooms</b></a>
 
                         </li>
 
                         <li>
-                            <a href="./users">
+                            <a href="/wogomin/admin/users" >
                                 <i class="fa fa-users"></i><b>Users</b></a>
                         </li>
                         <li>
-                            <a href="./contentchat">
-                                <i class="fa fa-comment"></i><b>Content chat</b></a>
+                            <a href="/wogomin/admin/contentchat" >
+                                <i class="fa fa-comment"></i><b>History chat</b></a>
 
                         </li>
                         <li>
-                            <a href="./login">
+                            <a href="/wogomin/admin/login">
                                 <i class="fa fa-sign-out"></i><b>Log out</b></a>
 
                         </li>
@@ -139,66 +143,7 @@
         <!-- PAGE CONTAINER-->
         <div class="page-container">
             <!-- HEADER DESKTOP-->
-            <header class="header-desktop">
-                <div class="section__content section__content--p30">
-                    <div class="container-fluid">
-                        <div class="header-wrap">
-                            <form class="form-header" action="" method="POST">
-                                <input class="au-input au-input--xl" type="text" name="search" placeholder="Search" />
-                                <button class="au-btn--submit" type="submit">
-                                    <i class="zmdi zmdi-search"></i>
-                                </button>
-                            </form>
-                           
-                            <div class="header-button">
-                                
-                                <div class="account-wrap">
-                                    <div class="account-item clearfix js-item-menu">
-                                        
-                                        <div class="content">
-                                        <span>Hello </span>
-                                            <a class="js-acc-btn" href=""><?php echo $_SESSION['user']; ?></a>
-                                        </div>
-                                        <!-- <div class="account-dropdown js-dropdown">
-                                            <div class="info clearfix">
-                                                <div class="image">
-                                                    <a href="#">
-                                                        <img src="images/icon/avatar-01.jpg" alt="John Doe" />
-                                                    </a>
-                                                </div>
-                                                <div class="content">
-                                                    <h5 class="name">
-                                                        <a href="#"><?php echo $_SESSION['user']; ?></a>
-                                                    </h5>
-                                                    <span class="email">johndoe@example.com</span>
-                                                </div>
-                                            </div>
-                                            <div class="account-dropdown__body">
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Account</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
-                                                </div>
-                                            </div>
-                                            <div class="account-dropdown__footer">
-                                                <a href="#">
-                                                    <i class="zmdi zmdi-power"></i>Logout</a>
-                                            </div>
-                                        </div> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
+            
             <!-- HEADER DESKTOP-->
 
             <!-- MAIN CONTENT-->
@@ -229,7 +174,7 @@
     <!-- Jquery JS-->
     <script src="/wogomin/public/vendor/jquery/jquery.min.js"></script>
     <!-- Bootstrap JS-->
-
+    <script src="/wogomin/public/vendor/bootstrap/js/popper.min.js"></script>
     <script src="/wogomin/public/vendor/bootstrap/js/bootstrap.min.js"></script>
     <!-- Vendor JS       -->
     <script src="/wogomin/public/vendor/slick/slick.min.js">
@@ -250,6 +195,9 @@
     <!-- Main JS-->
     <script src="/wogomin/public/js/admin/main-inpage.js"></script>
 
+    <script src="/wogomin/public/js/admin/ajax.js"></script>
+    
+    
 </body>
 
 </html>

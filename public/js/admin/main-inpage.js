@@ -1671,3 +1671,19 @@
   }
 
 })(jQuery);
+
+$(document).ready(function () {
+  $("#parent-checkbox").change(function() {
+    if(this.checked) {
+      $('#btn-delete-all').css('display', 'inline-block');
+      $('.children-checkbox').prop('checked', true);
+    }
+    else{
+      $('#btn-delete-all').css('display', 'none');
+      $('.children-checkbox').prop('checked', false);
+    }
+});
+});
+
+
+

@@ -40,6 +40,11 @@ Notes:	decreasing heading by 0.4em with every subsequent heading level
 /*                   GENERIC                           */
 /*-----------------------------------------------------*/
 /* ----- Normalize ----- */
+@font-face {
+    font-family: Roboto-Regular;
+    src: url('../../font/Roboto/Roboto-Regular.ttf'); 
+  }
+
 * {
     margin: 0;
     padding: 0;
@@ -82,7 +87,11 @@ p {
 }
 
 .table-responsive {
-    padding-right: 1px;
+    padding-right: 1px;  
+}
+
+.table-responsive-user{
+    max-height: 300px;
 }
 
 .card {
@@ -99,7 +108,7 @@ p {
 
 /* ----- Typography ----- */
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: Roboto-Regular, sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.625;
@@ -316,7 +325,7 @@ section {
 }
 
 .main-content {
-    padding-top: 116px;
+    padding-top: 35px;
     min-height: 100vh;
 }
 
@@ -1110,13 +1119,13 @@ section {
     border-radius: 2px;
 }
 
-.au-checkbox:hover input ~ .au-checkmark {
+/* .au-checkbox:hover input ~ .au-checkmark {
     background-color: transparent;
 }
 
 .au-checkbox input:checked ~ .au-checkmark {
     background-color: transparent;
-}
+} */
 
 .au-checkmark:after {
     content: "";
@@ -1636,6 +1645,7 @@ section {
     font-size: 16px;
     padding: 15px 0;
 }
+
 
 .navbar-sidebar .navbar__list li a i {
     margin-right: 19px;
@@ -3136,7 +3146,7 @@ section {
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
-    padding: 30px;
+    /* padding: 30px; */
     padding-bottom: 0;
     -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
@@ -3144,11 +3154,22 @@ section {
     margin-bottom: 40px;
 }
 
-@media (min-width: 992px) and (max-width: 1519px) {
+/* @media (min-width: 992px) and (max-width: 1519px) {
     .overview-item {
         padding-left: 15px;
         padding-right: 15px;
     }
+} */
+.title, .text{
+    padding: 0 15px;
+}
+
+.title{
+    border-radius: 10px 10px 100px 0;
+}
+
+.title1{
+    background-color: orange;
 }
 
 .overview-item--c1 {
@@ -3176,9 +3197,10 @@ section {
 }
 
 .overview-box .icon {
-    display: inline-block;
+    /* display: inline-block; */
     vertical-align: top;
-    margin-right: 15px;
+    /* margin-right: 15px; */
+    text-align: center;
 }
 
 .overview-box .icon i {
@@ -3204,7 +3226,7 @@ section {
 
 .overview-box .text {
     font-weight: 300;
-    display: inline-block;
+    /* display: inline-block; */
 }
 
 .overview-box .text h2 {
@@ -14649,3 +14671,21 @@ section {
 .vue-lists ul, .vue-lists ol {
     padding-left: 30px;
 }
+
+/* Other */
+
+#btn-delete-all{
+    display: none;
+}
+
+.flexy {
+    display: block;
+    max-height: 300px;
+    overflow: auto;
+}
+
+.table-responsive-user::-webkit-scrollbar {
+    display: none;
+}
+
+/* End other */
