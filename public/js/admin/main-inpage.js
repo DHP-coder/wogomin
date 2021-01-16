@@ -15,7 +15,7 @@
           type: 'line',
           datasets: [{
             data: [78, 81, 80, 45, 34, 12, 40],
-            label: 'Dataset',
+            label: 'user',
             backgroundColor: 'rgba(255,255,255,.1)',
             borderColor: 'rgba(255,255,255,.55)',
           },]
@@ -332,59 +332,68 @@
     }
 
     // Percent Chart
-    var ctx = document.getElementById("percent-chart");
-    if (ctx) {
-      ctx.height = 280;
-      var myChart = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-          datasets: [
-            {
-              label: "My First dataset",
-              data: [60, 40],
-              backgroundColor: [
-                '#00b5e9',
-                '#fa4251'
-              ],
-              hoverBackgroundColor: [
-                '#00b5e9',
-                '#fa4251'
-              ],
-              borderWidth: [
-                0, 0
-              ],
-              hoverBorderColor: [
-                'transparent',
-                'transparent'
-              ]
+    $.post("/wogomin/admin/chart2", { s: 0 }, function(data) {
+      var data = JSON.parse(data);
+      var result = [];
+      for (var i = 0; i < data.length; i++) {
+        result.push(data[i]);
+        //console.log(data[i].date + data[i].total);
+      }
+
+      var ctx = document.getElementById("percent-chart");
+      if (ctx) {
+        ctx.height = 280;
+        var myChart = new Chart(ctx, {
+          type: 'doughnut',
+          data: {
+            datasets: [
+              {
+                label: "My First dataset",
+                data: result,
+                backgroundColor: [
+                  '#00b5e9',
+                  '#fa4251'
+                ],
+                hoverBackgroundColor: [
+                  '#00b5e9',
+                  '#fa4251'
+                ],
+                borderWidth: [
+                  0, 0
+                ],
+                hoverBorderColor: [
+                  'transparent',
+                  'transparent'
+                ]
+              }
+            ],
+            labels: [
+              'Last month',
+              'This month'
+            ]
+          },
+          options: {
+            maintainAspectRatio: false,
+            responsive: true,
+            cutoutPercentage: 55,
+            animation: {
+              animateScale: true,
+              animateRotate: true
+            },
+            legend: {
+              display: false
+            },
+            tooltips: {
+              titleFontFamily: "Poppins",
+              xPadding: 15,
+              yPadding: 10,
+              caretPadding: 0,
+              bodyFontSize: 16
             }
-          ],
-          labels: [
-            'Products',
-            'Services'
-          ]
-        },
-        options: {
-          maintainAspectRatio: false,
-          responsive: true,
-          cutoutPercentage: 55,
-          animation: {
-            animateScale: true,
-            animateRotate: true
-          },
-          legend: {
-            display: false
-          },
-          tooltips: {
-            titleFontFamily: "Poppins",
-            xPadding: 15,
-            yPadding: 10,
-            caretPadding: 0,
-            bodyFontSize: 16
           }
-        }
-      });
-    }
+        });
+      }
+    });
 
   } catch (error) {
     console.log(error);
@@ -620,66 +629,74 @@
 
   try {
 
-    // Percent Chart 2
-    var ctx = document.getElementById("percent-chart2");
-    if (ctx) {
-      ctx.height = 209;
-      var myChart = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-          datasets: [
-            {
-              label: "My First dataset",
-              data: [60, 40],
-              backgroundColor: [
-                '#00b5e9',
-                '#fa4251'
-              ],
-              hoverBackgroundColor: [
-                '#00b5e9',
-                '#fa4251'
-              ],
-              borderWidth: [
-                0, 0
-              ],
-              hoverBorderColor: [
-                'transparent',
-                'transparent'
-              ]
-            }
-          ],
-          labels: [
-            'Products',
-            'Services'
-          ]
-        },
-        options: {
-          maintainAspectRatio: false,
-          responsive: true,
-          cutoutPercentage: 87,
-          animation: {
-            animateScale: true,
-            animateRotate: true
+    $.post("/wogomin/admin/chart1", { s: 0 }, function(data) {
+      var data = JSON.parse(data);
+      var result = [];
+      for (var i = 0; i < data.length; i++) {
+        result.push(data[i]);
+        //console.log(data[i].date + data[i].total);
+      }
+  
+      var ctx = document.getElementById("percent-chart2");
+      if (ctx) {
+        ctx.height = 209;
+        var myChart = new Chart(ctx, {
+          type: 'doughnut',
+          data: {
+            datasets: [
+              {
+                label: "My First dataset",
+                data: result,
+                backgroundColor: [
+                  '#00b5e9',
+                  '#fa4251'
+                ],
+                hoverBackgroundColor: [
+                  '#00b5e9',
+                  '#fa4251'
+                ],
+                borderWidth: [
+                  0, 0
+                ],
+                hoverBorderColor: [
+                  'transparent',
+                  'transparent'
+                ]
+              }
+            ],
+            labels: [
+              'Last month',
+              'This month'
+            ]
           },
-          legend: {
-            display: false,
-            position: 'bottom',
-            labels: {
-              fontSize: 14,
-              fontFamily: "Poppins,sans-serif"
-            }
+          options: {
+            maintainAspectRatio: false,
+            responsive: true,
+            cutoutPercentage: 87,
+            animation: {
+              animateScale: true,
+              animateRotate: true
+            },
+            legend: {
+              display: false,
+              position: 'bottom',
+              labels: {
+                fontSize: 14,
+                fontFamily: "Poppins,sans-serif"
+              }
 
-          },
-          tooltips: {
-            titleFontFamily: "Poppins",
-            xPadding: 15,
-            yPadding: 10,
-            caretPadding: 0,
-            bodyFontSize: 16,
+            },
+            tooltips: {
+              titleFontFamily: "Poppins",
+              xPadding: 15,
+              yPadding: 10,
+              caretPadding: 0,
+              bodyFontSize: 16,
+            }
           }
-        }
-      });
-    }
+        });
+      }
+    });
 
   } catch (error) {
     console.log(error);
@@ -1683,6 +1700,7 @@ $(document).ready(function () {
       $('.children-checkbox').prop('checked', false);
     }
 });
+
 });
 
 

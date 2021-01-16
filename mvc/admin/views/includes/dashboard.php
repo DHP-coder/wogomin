@@ -14,8 +14,15 @@
                         <i class="zmdi zmdi-account-o"></i>
                     </div>
                     <div class="text">
-                        <h2>10368</h2>
-                        <span>members online</span>
+                        <?php
+                        $count = 0;
+                        $mang = json_decode($data["cu"]);
+                        foreach ($mang as $m) {
+                            $count++;
+                        }
+                        ?>
+                        <h2><?php echo $count ?></h2>
+                        <span>Users</span>
                     </div>
                 </div>
                 <div class="overview-chart">
@@ -32,8 +39,15 @@
                         <i class="zmdi zmdi-shopping-cart"></i>
                     </div>
                     <div class="text">
-                        <h2>388,688</h2>
-                        <span>items solid</span>
+                        <?php
+                        $countd = 0;
+                        $mang = json_decode($data["cd"]);
+                        foreach ($mang as $m) {
+                            $countd++;
+                        }
+                        ?>
+                        <h2><?php echo $countd ?></h2>
+                        <span>Doctors</span>
                     </div>
                 </div>
                 <div class="overview-chart">
@@ -50,8 +64,15 @@
                         <i class="zmdi zmdi-calendar-note"></i>
                     </div>
                     <div class="text">
-                        <h2>1,086</h2>
-                        <span>this week</span>
+                        <?php
+                        $counth = 0;
+                        $mang = json_decode($data["ch"]);
+                        foreach ($mang as $m) {
+                            $counth++;
+                        }
+                        ?>
+                        <h2><?php echo $counth ?></h2>
+                        <span>Total chat</span>
                     </div>
                 </div>
                 <div class="overview-chart">
@@ -68,8 +89,17 @@
                         <i class="zmdi zmdi-money"></i>
                     </div>
                     <div class="text">
-                        <h2>$1,060,386</h2>
-                        <span>total earnings</span>
+                        <?php
+                        $countm = 0;
+                        $mang = json_decode($data["cm"]);
+                        foreach ($mang as $m) {
+                            $countm += $m->wallet;;
+                        }
+
+                        ?>
+
+                        <h2><?php echo number_format($countm, 0, '', ','); ?></h2>
+                        <span>VNĐ</span>
                     </div>
                 </div>
                 <div class="overview-chart">
@@ -81,53 +111,42 @@
 </div>
 <div class="row">
     <div class="col-lg-6">
-        <div class="au-card recent-report">
-            <div class="au-card-inner">
-                <h3 class="title-2">recent reports</h3>
-                <div class="chart-info">
-                    <div class="chart-info__left">
-                        <div class="chart-note">
-                            <span class="dot dot--blue"></span>
-                            <span>products</span>
-                        </div>
-                        <div class="chart-note mr-0">
-                            <span class="dot dot--green"></span>
-                            <span>services</span>
-                        </div>
-                    </div>
-                    <div class="chart-info__right">
-                        <div class="chart-statis">
-                            <span class="index incre">
-                                <i class="zmdi zmdi-long-arrow-up"></i>25%</span>
-                            <span class="label">products</span>
-                        </div>
-                        <div class="chart-statis mr-0">
-                            <span class="index decre">
-                                <i class="zmdi zmdi-long-arrow-down"></i>10%</span>
-                            <span class="label">services</span>
-                        </div>
-                    </div>
+        <!-- CHART PERCENT-->
+        <div class="chart-percent-2">
+            <h3 class="title-3 m-b-30">Statistics chart of the number of registered users</h3>
+            <div class="chart-wrap">
+                <canvas id="percent-chart2"></canvas>
+                <div id="chartjs-tooltip">
+                    <table></table>
                 </div>
-                <div class="recent-report__chart">
-                    <canvas id="recent-rep-chart"></canvas>
+            </div>
+            <div class="chart-info">
+                <div class="chart-note">
+                    <span class="dot dot--blue"></span>
+                    <span>Last month</span>
+                </div>
+                <div class="chart-note">
+                    <span class="dot dot--red"></span>
+                    <span>This month</span>
                 </div>
             </div>
         </div>
+        <!-- END CHART PERCENT-->
     </div>
     <div class="col-lg-6">
         <div class="au-card chart-percent-card">
             <div class="au-card-inner">
-                <h3 class="title-2 tm-b-5">char by %</h3>
+                <h3 class="title-2 tm-b-5">Total deposit statistics chart</h3>
                 <div class="row no-gutters">
                     <div class="col-xl-6">
                         <div class="chart-note-wrap">
                             <div class="chart-note mr-0 d-block">
                                 <span class="dot dot--blue"></span>
-                                <span>products</span>
+                                <span>Last month</span>
                             </div>
                             <div class="chart-note mr-0 d-block">
                                 <span class="dot dot--red"></span>
-                                <span>services</span>
+                                <span>This month</span>
                             </div>
                         </div>
                     </div>

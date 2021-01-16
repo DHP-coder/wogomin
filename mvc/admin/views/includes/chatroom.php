@@ -16,7 +16,7 @@
                     </a>
 
                     <a href="./showaddchatroom" type="btn" class="au-btn au-btn-icon au-btn--green au-btn--small">
-                    <i class="zmdi zmdi-plus"></i>Add chat room
+                    <i class="zmdi zmdi-plus"></i>Add service
                     </a>
 
                     
@@ -27,17 +27,11 @@
         <div id="dataSearch"></div>
         <div id="table-after">
             <table class="table table-data2">
-                <thead>
+                <thead style="background-color: darkgray">
                     <tr>
-                        <th>
-                            <label class="au-checkbox">
-                                <input type="checkbox" id="parent-checkbox">
-                                <span class="au-checkmark"></span>
-                            </label>
-                        </th>
-                        <th>Room chat</th>
+                        <th>Services</th>
                         <th>Date create</th>
-                        <th></th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -48,12 +42,6 @@
                 foreach($mang as $m){
                 ?>
                     <tr class="tr-shadow">
-                        <td>
-                            <label class="au-checkbox">
-                                <input type="checkbox" class = "children-checkbox">
-                                <span class="au-checkmark"></span>
-                            </label>
-                        </td>
                         <td><?php echo $m->roomName ?></td>
                         <td>
                             <span class="block-email"><?php echo $m->dateCreated ?></span>

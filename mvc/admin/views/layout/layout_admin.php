@@ -1,5 +1,5 @@
 <?php 
-    if(!isset($_SESSION['user'])){
+    if(!isset($_SESSION['username'])){
         header("Location: ./login");
     }
 
@@ -106,7 +106,7 @@
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li>
-                            Hello <b><?php echo $_SESSION['user']; ?></b>
+                            Hello <b><?php echo $_SESSION['username']; ?></b>
                                         
                         </li>
                         <li>
@@ -116,7 +116,7 @@
                         </li>
                         <li>
                             <a href="/wogomin/admin/chatroom" >
-                                <i class="fa fa-comments"></i><b>Chat rooms</b></a>
+                                <i class="fa fa-comments"></i><b>Services</b></a>
 
                         </li>
 

@@ -99,7 +99,7 @@ foreach($mang as $m){
 	
 		if($username  == $m->username && md5($password)  == $m->password){
 
-			$_SESSION['user']  = $username;
+			$_SESSION['username']  = $username;
 			header("Location: ./index");
 			
 }

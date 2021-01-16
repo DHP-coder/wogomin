@@ -30,9 +30,24 @@ class RoomChatModel extends DB{
         return json_encode($mang);
     }
 
-    function updateRoomChat($id, $roomname, $datecreate){
+    public function updateRoomChat($id, $roomname, $datecreate){
         $qr = "UPDATE chatroom SET roomName = '$roomname', dateCreated = '$datecreate' WHERE id = $id";
         mysqli_query($this->con, $qr);
+    }
+
+    public function checkRoom($r){
+        $r= trim($r);
+        if($r == ''){
+            $kq = 0;
+        }
+        else{
+        $qr = "SELECT id FROM chatroom WHERE roomName = '$r'";
+        $rows = mysqli_query($this->con, $qr);
+        $kq = true;
+        if(mysqli_num_rows($rows)>0){
+            $kq = false;
+        }}
+        return json_encode($kq);
     }
 
     public function deleteRoomChat($id){
@@ -46,33 +61,22 @@ class RoomChatModel extends DB{
     }
 
     public function searchData($s){
+        $s=trim($s);
         $qr = "SELECT * FROM chatroom WHERE roomName LIKE '%$s%'";
         $rows = mysqli_query($this->con, $qr);
         
         if(mysqli_num_rows($rows)>0){
             $output = '<table class="table table-data2">
-            <thead>
+            <thead style="background-color: darkgray">
                 <tr>
-                    <th>
-                        <label class="au-checkbox">
-                            <input type="checkbox" id="parent-checkbox">
-                            <span class="au-checkmark"></span>
-                        </label>
-                    </th>
                     <th>Room chat</th>
                     <th>Date create</th>
-                    <th></th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>';
             while($row = mysqli_fetch_array($rows)){
                 $output .= '<tr class="tr-shadow">
-                <td>
-                    <label class="au-checkbox">
-                        <input type="checkbox" class = "children-checkbox">
-                        <span class="au-checkmark"></span>
-                    </label>
-                </td>
                 <td>'.$row["roomName"].'</td>
                 <td>
                     <span class="block-email">'.$row["dateCreated"].'</span>

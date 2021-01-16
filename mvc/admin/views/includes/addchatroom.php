@@ -8,24 +8,27 @@
                 <form action="/wogomin/admin/addChatRoom" method="post">
                     <div class="form-group">
                         <div class="input-group">
-                            <div class="input-group-addon">Room name</div>
-                            <input type="text" id="email3" name="roomname" class="form-control">
+                            <div class="input-group-addon">Service name</div>
+                            <input type="text" id="roomname" name="roomname" class="form-control">
 
                         </div>
+                        <div><small class="text-danger" id="roomE"></small></div>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <div class="input-group">
                             <div class="input-group-addon" style="padding: .5rem 0.9rem;">Date create</div>
-                            <input type="date" id="password3" name="datecreate" class="form-control">
+                            <input type="date" required id="password3" name="datecreate" class="form-control">
 
                         </div>
-                    </div>
+                        
+                    </div> -->
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary btn-sm" name="btn-addRoom">
-                            <i class="fa fa-dot-circle-o"></i> Add
+                        <i class="fa fa-edit"></i> Add
                         </button>
-                        <button type="reset" class="btn btn-danger btn-sm">
-                            <i class="fa fa-ban"></i> Cancel
+
+                        <button class="btn btn-danger btn-sm">
+                            <a href="/wogomin/admin/chatroom" class="text-white"><i class="fa fa-ban"></i> Cancel</a>
                         </button>
                     </div>
                 </form>

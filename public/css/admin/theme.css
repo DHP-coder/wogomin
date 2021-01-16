@@ -888,7 +888,7 @@ section {
 }
 
 .rs-select2--sm {
-    width: 114px;
+    width: 190px;
 }
 
 .rs-select2--md {
@@ -4224,6 +4224,8 @@ section {
 .chart-percent-2 {
     margin-bottom: 40px;
     padding-bottom: 70px;
+    height: 457px;
+    border-radius: 10px;
 }
 
 .chart-percent-2 .chart-info {
@@ -4636,10 +4638,10 @@ section {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: end;
-    -webkit-justify-content: flex-end;
+    /* -webkit-justify-content: flex-end; */
     -moz-box-pack: end;
     -ms-flex-pack: end;
-    justify-content: flex-end;
+    /* justify-content: flex-end; */
 }
 
 .table-data-feature .item {
