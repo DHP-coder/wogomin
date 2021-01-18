@@ -1,0 +1,131 @@
+.wrapper-inner {
+    margin : 0 20%;
+}
+#td-profile{
+    text-align: center;
+    padding : 7px 40px;
+}
+#tr-profile:hover{
+    border-left: 2px solid black;
+}
+.profile{
+    padding-top : 25px;
+    border: 1px solid;
+    float: left;
+    border-top: none;
+}
+#name, #fname, #location, #email, #phone, #old-password, #new-password{
+    width: 90%;
+    margin-top: 3px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    padding :7px 15px;
+    background-color :rgb(238, 238, 238);
+    border: 2px solid rgb(209, 208, 208);
+}
+#form-changeprofile{
+    width :100%;
+}
+#save{
+    margin-left: 70%;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    width: 100px;
+    border-radius: 16px;
+    border: 0px;
+    background-color: rgb(91, 8, 245);
+    color: white;
+    padding-bottom: 5px;
+}
+#save:hover{
+    border: 1px solid;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
+    text-shadow: 1px 1px 2px #427388;
+}
+#save:focus{
+    border: none;
+    outline:none;
+}
+#name:focus, #fname:focus, #location:focus, #email:focus, #phone:focus, #old-password:focus, #new-password:focus{
+    outline:none;
+    border: 2px solid rgb(209, 208, 208);
+    border-radius: 12px;
+}
+#avatar{
+    width: 120%;
+    border-radius: 50%;
+}
+.info-avt{
+    margin-top: 15px;
+}
+.avt{
+    padding-top : 25px;
+    border: 1px solid;
+    border-left: none;
+    border-top: none;
+    padding-left: 100px;
+    height: auto;
+}
+body{
+    background-color:white!important;
+}
+#a-avt:hover, #forgotpass:hover{
+    text-decoration: none;
+}
+#a-profile:hover{
+    text-decoration: none;
+    color :black;
+}
+#a-profile{
+    color: black;
+    width : 252px;
+}
+p#info-account{
+    margin-top: 25px;
+}
+@media(max-width:992px){
+    html{
+        position: static;
+    }
+    .wrapper-inner{
+        margin: 0 0;
+    }
+    #col-changeprofile-1{
+        max-width: 100%;
+        flex: 0 0 100%;
+        padding-top: 0;
+    }
+    #tb-profile{
+        margin-left: 15%;
+        padding-top: 0;
+    }
+    .avt{
+        max-width: 100%;
+        border-bottom: none;
+        border-right: none;
+    }
+    .profile{
+        border-right: none;
+    }
+    #save{
+        margin-left: 170px;
+
+    }
+    #name, #fname, #location, #email, #phone, #old-password, #new-password{
+        width: auto;
+    }
+
+}
+@media(max-width:480px){
+    #tb-profile{
+        margin-left: 19%;
+    }
+    #avatar{
+        width:200%;
+    }
+    .info-avt{
+        margin-top: 0px;
+    }
+}

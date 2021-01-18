@@ -41,15 +41,16 @@
 					<img src="../public/images/admin/WoGoMin.png" alt="IMG" style="width: 60%;">
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate="Username is required">
-						<input class="input100" type="text" name="username" placeholder="Username">
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" id="username" name="username" placeholder="Username">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-user" aria-hidden="true"></i>
 						</span>
+						<div><small class="text-danger" id="userE"></small></div>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate="Password is required">
+					<div class="wrap-input100 validate-input">
 						<input class="input100" type="password" name="password" placeholder="Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">

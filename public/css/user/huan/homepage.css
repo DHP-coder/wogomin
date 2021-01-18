@@ -1,0 +1,125 @@
+body{
+    background-color: white!important;
+}
+.wrapper{
+    margin-left:5%;
+    height: 100%;
+    position: relative;
+}
+.header{
+    width:97%;
+    height : 90%;
+    margin-top: 7px;
+    margin-left: 23px;
+}
+#avt-homepage1{
+    width:70px;
+    float: left;
+    border-radius: 50%;
+}
+.header-homepage{
+    background-color: rgb(207, 222, 245);
+    border-radius: 16px;
+    height: 25%;
+}
+.homepage-left{
+    float: left;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+.homepage-right{
+    float: right;
+    margin-top: 30px;
+}
+.p-homepage{
+    margin-left: 100px;
+    margin-top: 10px;
+}
+#p-homepage1{
+    margin-bottom: 0px!important;
+}
+.friendship{
+    background-color:rgb(115, 211, 115);
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 16px;
+}
+#avt-friendship{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+}
+#p-fr{
+    margin-top: 5%;
+}
+#a-friendship:hover{
+    text-decoration: none;
+    color: white;
+}
+#a-friendship{
+    color: white;
+}
+.item-1, .item-3{
+    margin-top: 50px;
+    width:100%;
+}
+.item-2{
+    margin-top: 40px;
+    width:100%;
+}
+#img-ykien{
+   width:100%;
+}
+#img-cauhoi{
+    margin-left: 10px;
+    width: 100%;
+}
+#p-ykien{
+    margin-left: 20%;
+}
+#p-cauhoi{
+    margin-left: 30%;
+}
+.friendship:hover{
+    box-shadow: 0px 0px 6px 6px rgb(115, 211, 115);
+}
+#img-ykien:hover, #img-cauhoi:hover{
+    transform: scale(1.2);
+}
+@media(max-width:768px){
+    html{
+        position: static;
+    }
+    .wrapper{
+        margin: 0 0;
+    }
+    .header{
+        position: static;
+    }
+    .header-homepage{
+        display: none;
+    }
+    .item-1, .item-2, .item-3{
+        margin-top: 0;
+    }
+    .header{
+        width:100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .item-1, .item-2{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #col-homepage-1, #col-homepage-2, #col-homepage-3{
+        margin-top: 5%;
+    }
+    #img-ykien, #img-cauhoi{
+        margin-left: 14%;
+    }
+    #p-ykien, #p-cauhoi{
+        margin-left: 30%;
+    }
+}

@@ -1,3 +1,4 @@
+<div class="wrapper-inner">
 <?php 
     $data = json_decode($data["data"]);
     foreach($data as $item) {
@@ -12,7 +13,7 @@
     </div>
     <div class="col-6">
         <div>
-            <button id="change-avtpro" type="button"><a href="./editProfile">Chỉnh sửa trang cá nhân</a></button>
+            <button id="change-avtpro" type="button"><a href="./editProfile" style="color: white;text-decoration: none;">Chỉnh sửa trang cá nhân</a></button>
         </div>
     </div>
 </div>
@@ -40,3 +41,4 @@
     </div>
 </div>
 <?php } ?>
+</div>

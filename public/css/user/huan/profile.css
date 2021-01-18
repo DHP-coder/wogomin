@@ -1,0 +1,66 @@
+body{
+    background-color: white!important;
+}
+.wrapper-inner {
+    margin : 0 20%;
+}
+#pro{
+    width: 70%;
+    border-radius: 50%;
+}
+.add{
+    padding-top: 40px;
+}
+#change-avtpro{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    width: 270px;
+    border-radius: 16px;
+    border: 0px;
+    background-color: rgb(91, 8, 245);
+    color: white;
+    padding-bottom: 5px;
+    box-shadow: 2px 5px 5px #888888;
+}
+hr{
+    background-color:black
+}
+#phonenumber, #pass, #mail, #wallet{
+    margin:10px 0px;
+}
+#change-avtpro:focus{
+    outline:none;
+    border: none;
+}
+#change-avtpro:hover{
+    border: 1px solid;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
+    text-shadow: 1px 1px 2px #427388; 
+}
+@media(max-width:768px){
+    .wrapper-inner{
+        margin: 0 0;
+    }
+    #row-profile{
+        display: inline;
+    }
+    #col-profile-1{
+        max-width: 50%;
+        margin-left: 30%;
+    }
+    .add{
+        margin-left: 30%;
+        padding-top: 20px;
+    }
+    #button-profile{
+        margin-left:11%;
+    }
+    #row-profile-2{
+        margin-left: 30%;
+    }
+    #change-avtpro{
+        margin-top :20px;
+    }
+}

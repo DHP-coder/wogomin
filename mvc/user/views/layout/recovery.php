@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,14 +13,12 @@
   <link rel="stylesheet" type="text/css" href="/wogomin/public/vendor/select2/select2.min.css">
   <link rel="stylesheet" type="text/css" href="/wogomin/public/css/user/style.css">
   <link rel="stylesheet" type="text/css" href="/wogomin/public/css/user/input-verify.css">
-
   <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/ui/4.7.1/firebase-ui-auth.js"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.7.1/firebase-ui-auth.css" />
-
   <script>
         // Initialize Firebase
         var config = {
@@ -35,11 +32,9 @@
         };
         firebase.initializeApp(config);
       </script>
-
       <body>
         <header><img src="/wogomin/public/images/user/logo.png" alt=""></header>
         <div class="container">
-
           <div class="row">
             <div class="col-md-6">
               <div class="hidden-after">
@@ -48,7 +43,6 @@
             </div>
             <div class="col-md-6" id="rps">
               <form action="" method="post" id="khung" onsubmit="return false">
-
                 <div id="hinh2">
                   <a href="http://localhost/wogomin/home/forgot"><i class="fa fa-arrow-left" id="back"></i></a>
                   <div class="d-flex">
@@ -56,7 +50,7 @@
                     <div id="code-member">
                       <small>Code</small>
                     </div>
-                    <div class="input-icons1">
+                    <div class="input-icons">
                       <section class="w-100 text-center">
                         <div class="otp-content text-center">
                         </div>
@@ -70,8 +64,8 @@
                     <div class="input-icons">
                       <input class="input-field" type="password" name="cfpass" id="cfpassword" placeholder=" Confirm Password">
                       <i class="fa fa-eye" id="togglecfPassword"> </i>
-                      <small id="cfpass"></small>
                     </div>
+                    <small id="cfpass"></small>
                     <div id="recaptcha-container"></div>
                     <div id="ip2">
                       <button type="submit" class="btn-login" id="buttonsubmit">Change Password</button>
@@ -105,7 +99,6 @@
               password.setAttribute('type', type);
               this.classList.toggle('fa-eye-slash');
             });
-
             const togglecfPassword = document.querySelector('#togglecfPassword');
             const cfpassword = document.querySelector('#cfpassword');
             togglecfPassword.addEventListener('click', function (e) {
@@ -114,10 +107,11 @@
               this.classList.toggle('fa-eye-slash');
             });
           });
-
+          function isPass(pass) {
+            return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(pass);
+          }
           let params = new URLSearchParams(location.search);
           var phoneNumber = params.get('phone');
-
           window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
             "recaptcha-container", {
               size: "invisible",
@@ -126,26 +120,23 @@
                 }
               }
           );
-
           firebase.auth().signInWithPhoneNumber("+84"+phoneNumber, window.recaptchaVerifier)
           .then((confirmationResult) => {
             window.confirmationResult = confirmationResult;
           }).catch((error) => {
             swal("Can not send message, please try it later.");
           });
-
           $('#buttonsubmit').on('click', function () {
             
             var inputValues = $('.otp').map(function() {
               return $(this).val();
             }).toArray().toString();
             inputValues = inputValues.replace(/,/g, "");
-
             window.confirmationResult.confirm(inputValues)
             .then(function(result) {
+              // swal('ok');
               var passValue = $('input[name=pass]').val();
               var cfpassValue = $('input[name=cfpass]').val();
-
               if (passValue == '') {
                 $("#passE").text("Password required");
                 return false;
@@ -157,7 +148,6 @@
                   $("#passE").text("");
                 }
               }
-
               if (cfpassValue == '') {
                 $("#cfpass").text("Confirm password required");
                 return false;
@@ -169,12 +159,12 @@
                   $("#cfpass").text("");
                 }
               }
-
               if (passValue != '' && cfpassValue != '') {
                 let params = new URLSearchParams(location.search);
-                var phoneNumber = params.get('phone');
+                var phoneValue = params.get('phone');
                 $.post("/wogomin/home/renewPassword", { 
-                  phoneNumber: phoneNumber
+                  phoneNumber: phoneValue,
+                  newPass: passValue
                 }, function(data) {
                   // swal(data);
                   if (data == 1) {
@@ -192,7 +182,7 @@
                   } else {
                     swal({
                       title: "Error",
-                      text: "There was an error. Please try again later",
+                      text: "There was an error. Please try again later" + data,
                       icon: "error",
                       button: "OK",
                     });
@@ -206,11 +196,9 @@
                 icon: "error",
                 button: "OK",
               });
-                // swal(error.message);
+                swal(error.message);
             });
           });
         </script>
-
       </body>
-
       </html>

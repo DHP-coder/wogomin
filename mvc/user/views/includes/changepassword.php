@@ -1,6 +1,6 @@
 <div class="row">
-    <div class="profile col-4">
-        <table id="tb-profile">
+    <div class="profile col-6">
+        <table id="tb-profile" style="margin: auto;">
             <tr>
                 <td id="td-profile" class="active"><a id="a-profile" href="./editProfile">Chỉnh sửa trang cá nhân</a></td>
          </tr>
@@ -12,13 +12,13 @@
         </tr> -->
     </table>
 </div>
-<div class="avt col-8">
+<div class="avt col-6">
     <div class="row">
         <div class="col-2">
             <img id="avatar" src="/wogomin/public/images/user/avt.jpg">
         </div>
         <div class="info-avt col-10">
-            Sebastian
+        <?php echo $_SESSION['userName'] ?>
         </div>
     </div>
     <p id="info-account">Change Password</p>

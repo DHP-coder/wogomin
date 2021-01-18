@@ -1,0 +1,133 @@
+body{
+    background-color: white!important;
+}
+.wrapper{
+    margin-left:5%;
+    
+    height: 100%;
+    position: relative;
+}
+.row-homepage{
+   
+    width:95%;
+    height : 90%;
+    margin-top: 7px;
+}
+#img-homepage2{
+    box-shadow: 0px 0px 6px 6px rgb(180, 123, 255);
+}
+.reprodutive{
+    margin-top: 100px;
+    margin-left: 80px;
+}
+.div-reprodutive{
+    margin-top: 20px;
+    margin-left: 40px;
+}
+.btn-reprodutive{
+    width:83%;
+    height: 40px;
+    border-radius: 24px;
+    color: white;
+    background-color:rgb(180, 123, 255);
+    border: none;
+}
+#price{
+    margin-left: 70px;
+}
+.price-1, .price-2, .price-3, .price-4{
+    margin-top: 30%;
+    background-color:rgb(220, 168, 255);
+    width:100%;
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: 0px 6px 6px grey;
+}
+.booknow-price-1, .booknow-price-2, .booknow-price-3,.booknow-price-4{
+    border-bottom-right-radius: 80px;
+    height: 120px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.booknow-price-1{
+    background-color:rgba(255, 0, 0, 0.582);
+}
+.booknow-price-2{
+    background-color:rgb(99, 217, 221);
+}
+.booknow-price-3{
+    background-color:rgb(76, 235, 124);
+}
+.booknow-price-4{
+    background-color:rgb(235, 148, 142);
+}
+#min-price-1, #min-price-2, #min-price-3, #min-price-4{
+    color: white;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 0px!important;
+    font-size: 20px;
+}
+#mn-price-1,#mn-price-2,#mn-price-3,#mn-price-4{
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+#small{
+    font-size:10px!important;
+    margin-left: 5px;
+}
+#ct-book{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 14px;
+}
+#book-now{
+    margin-left: 22%;
+    color: white;
+    border-radius: 24px;
+    background-color:rgb(59, 72, 255);
+    border: none;
+    padding:2px 20px;
+}
+#book-now:focus{
+    border: 0;
+    outline: none;
+}
+.price-1:hover, .price-2:hover, .price-3:hover, .price-4:hover{
+    transform: scale(1.2);
+}
+.btn-reprodutive:hover{
+    box-shadow: 0px 0px 6px 6px rgb(180, 123, 255);
+}
+.btn-reprodutive:focus{
+    outline: none;
+    border: none;
+}
+@media(max-width:768px){
+    .row-homepage{
+        position: static;
+        width: 100%;
+        left: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .wrapper{
+        margin-left: 0;
+    }
+    .reprodutive{
+        margin-top: 10%;
+        margin-left: 25%;
+    }
+    .div-reprodutive{
+        margin-left: 15%;
+    }
+    .price-1, .price-2, .price-3, .price-4{
+        margin-top: 20%;
+        width:55%;
+        height: 85%;
+        margin-left: 22%;
+    }
+}
+

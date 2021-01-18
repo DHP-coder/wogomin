@@ -5,6 +5,7 @@ class Home extends Controller{
     public $register;
     public $profile;
     public $payment;
+    public $homepage;
 
     public function __construct()
     {
@@ -13,11 +14,13 @@ class Home extends Controller{
         $this->register = $this->modelUser("RegisterModel");
         $this->profile = $this->modelUser("ProfileModel");
         $this->payment = $this->modelUser("PaymentModel");
+        $this->homepage = $this->modelUser("HomepageModel");
     }
     /*--------------------homepage--------------------*/
     function index(){
         $this->viewUser("layout_user", [
-            "page"=>"homepage"
+            "page"=>"homepage",
+            "homepage" => $this->homepage->getDataHome()
         ]);
     }
 
@@ -127,9 +130,7 @@ class Home extends Controller{
 
     /*--------------------payment--------------------*/
     function payByATM(){
-        $this->viewUser("layout_user", [
-            "page" => "payByATM"
-        ]);
+        $this->viewUser("payByATM");
     }
 
     function payByQR(){
@@ -146,6 +147,22 @@ class Home extends Controller{
 
     function ATMPayment() {
         $this->payment->popupPayment();
+    }
+
+    function updateWallet() {
+        $this->payment->updateWallet();
+    }
+    // -----------------------------
+    function news(){
+        $this->viewUser("news");
+    }
+    // -----------------------------
+    function homepage1(){
+        $this->viewUser("homepage1");
+    }
+
+    function homepage(){
+        $this->viewUser("homepage");
     }
 }
 ?>

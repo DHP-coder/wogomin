@@ -42,6 +42,14 @@ class Admin extends Controller{
             "cm" => $cm
         ]);
     }
+
+    public function chart1(){
+        echo $this->chart1->getDataChart1();
+    }
+
+    public function chart2(){
+        echo $this->chart1->getDataChart2();
+    }
 // -------------------------------------------------------------------//
     function chatRoom(){
         $this->viewAdmin("layout_admin", [
@@ -160,12 +168,6 @@ class Admin extends Controller{
         ]);
     }
 // -------------------------------------------------------------------//
-    public function chart1(){
-        echo $this->chart1->getDataChart1();
-    }
-
-    public function chart2(){
-        echo $this->chart1->getDataChart2();
-    }
+    
 }
 ?>
